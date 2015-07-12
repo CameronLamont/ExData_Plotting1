@@ -1,10 +1,15 @@
 ## Introduction
 
+Completed Exploratory Data Analysis Course Project 1
+Cameron Lamont
+
+## Background
+
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
 datasets. In particular, we will be using the "Individual household
-electric power consumption Data Set" which I have made available on
+electric power consumption Data Set" which are available on
 the course web site:
 
 
