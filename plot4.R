@@ -51,7 +51,7 @@ plot4 <- function(){
     
     #set background graphic parameter to transparent
     #set mfcol parameter to column wise 2x2
-    par(bg="transparent",mfcol = c(2,2))
+    par(bg="transparent",mfcol = c(2,2),mar=c(4,4.1,4,2.1))
     
 
     #plot 2 - top left

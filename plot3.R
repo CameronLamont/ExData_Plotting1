@@ -37,7 +37,7 @@ esb_time_plot <- function(legend.bty="o",legend.text.width=40000){
 plot3 <- function(){
     
     #set background graphic parameter to transparent
-    par(bg="transparent",mfrow=c(1,1))
+    par(bg="transparent",mfrow=c(1,1),mar=c(4,4.1,4,2.1))
     
     esb_time_plot(legend.bty="o",legend.text.width=40000)
     # save plot to ./plot3.png

@@ -22,7 +22,7 @@ gap_time_plot <- function() {
 }
 plot2 <- function(){
     #set background graphic parameter to transparent
-    par(bg="transparent",mfrow=c(1,1))
+    par(bg="transparent",mfrow=c(1,1),mar=c(4,4.1,4,2.1))
     
     gap_time_plot()
 
