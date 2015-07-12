@@ -1,4 +1,4 @@
-#Plot 1
+#Plot 1 - run plot1()
 
 #load hpc dataset into hpc variable
 source("./hpc.R")
