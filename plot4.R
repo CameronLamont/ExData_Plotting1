@@ -55,8 +55,7 @@ volt_time_plot <- function() {
 grp_time_plot <- function() {
     
     
-    #set background graphic parameter to transparent
-    par(bg="transparent")
+   
     
     # plot empty plot of 2007-02-01 -> 2007-02-02 subset of data
     with(subset(hpc,
@@ -77,19 +76,24 @@ plot4 <- function(){
     source("./plot2.R")
     source("./plot3.R")
     
+    #set background graphic parameter to transparent
     #set mfcol parameter to column wise 2x2
-    par(mfcol = c(2,2))
+    par(bg="transparent",mfcol = c(2,2))
+    
+
     #plot 2 - top left
     gap_time_plot()
-    #plot 3 - bottom left
-    esb_time_plot(legend_bty="n")
+    #plot 3 - bottom left - no legend border, 
+    #override default legend with for png output
+    esb_time_plot(legend.bty="n",legend.text.width=80000)
     # new for plot4 top right and bottom right
     volt_time_plot()
     grp_time_plot()
     
     
     # save plot to ./plot4.png
-    dev.copy(png, file = "plot4.png",bg="transparent")
+    dev.copy(png, file = "plot4.png",bg="transparent",
+             width=480,height=480,units="px")
     dev.off()
 }
 plot4()

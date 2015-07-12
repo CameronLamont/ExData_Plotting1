@@ -6,8 +6,7 @@ source("./hpc.R")
 gap_time_plot <- function() {
 
     
-    #set background graphic parameter to transparent
-    par(bg="transparent")
+   
     
     # plot empty plot of 2007-02-01 -> 2007-02-02 subset of data
     with(subset(hpc,
@@ -22,10 +21,14 @@ gap_time_plot <- function() {
                 hpc$Date >= "2007-02-01" &  hpc$Date <= "2007-02-02"),lines(Time,Global_active_power))
 }
 plot2 <- function(){
+    #set background graphic parameter to transparent
+    par(bg="transparent",mfrow=c(1,1))
+    
     gap_time_plot()
 
     # save plot to ./plot2.png
-    dev.copy(png, file = "plot2.png",bg="transparent")
+    dev.copy(png, file = "plot2.png",bg="transparent",
+             width=480,height=480,units="px")
     dev.off()
 }
 #plot2()

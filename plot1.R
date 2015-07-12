@@ -5,10 +5,6 @@ source("./hpc.R")
 
 gap_hist <- function(){
 
-   
-    #set background graphic parameter to transparent
-    par(bg="transparent")
-    
     # plot histogram of 2007-02-01 -> 2007-02-02 subset of data
     hist(subset(hpc$Global_active_power,
                 hpc$Date >= "2007-02-01" & hpc$Date <="2007-02-02"),
@@ -22,10 +18,15 @@ gap_hist <- function(){
 }
 
 plot1 <- function(){
+    #set background graphic parameter to transparent
+    par(bg="transparent",mfrow=c(1,1))
+    
+    
     gap_hist()
     
     # save plot to ./plot1.png
-    dev.copy(png, file = "plot1.png",bg="transparent")
+    dev.copy(png, file = "plot1.png",bg="transparent",
+             width=480,height=480,units="px")
     dev.off()
 }
 

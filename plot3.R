@@ -3,9 +3,9 @@
 #load hpc dataset into hpc variable
 source("./hpc.R")
 
-esb_time_plot <- function(legend_bty="o"){
-    #set background graphic parameter to transparent
-    par(bg="transparent")
+#allow for legend border to be disabled with legend.bty="n"
+#adjust legend text width to correct for PNG output
+esb_time_plot <- function(legend.bty="o",legend.text.width=40000){
     
     # plot empty plot of 2007-02-01 -> 2007-02-02 subset of data
     with(subset(hpc,
@@ -28,14 +28,21 @@ esb_time_plot <- function(legend_bty="o"){
                 lines(Time,Sub_metering_3,col="blue"))
     
     #add legend
-    legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-           col=c("black","red","blue"),lty=1,cex=0.75,text.width=50000,bty=legend_bty)
+    legend("topright",
+           legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+           col=c("black","red","blue"),lty=1,cex=0.70,bty=legend.bty,
+           inset=c(0.001,0.001),text.width=legend.text.width,y.intersp=1.2)
 }
 
 plot3 <- function(){
-    esb_time_plot()
+    
+    #set background graphic parameter to transparent
+    par(bg="transparent",mfrow=c(1,1))
+    
+    esb_time_plot(legend.bty="o",legend.text.width=40000)
     # save plot to ./plot3.png
-    dev.copy(png, file = "plot3.png",bg="transparent")
+    dev.copy(png, file = "plot3.png",bg="transparent",
+             width=480,height=480,units="px")
     dev.off()
 }
 #plot3()
